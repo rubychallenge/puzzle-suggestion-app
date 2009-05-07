@@ -2,7 +2,7 @@ require 'rubygems'
 require 'vendor/rack/lib/rack.rb'
 require 'vendor/sinatra/lib/sinatra.rb'
 
-path = "/home/peterszinek/guitracker.hexagile.com/current"
+path = "/home/peterszinek/suggestions.rubychallenge.com/current"
 
 Sinatra::Application.default_options.merge!(
 	:root => path,

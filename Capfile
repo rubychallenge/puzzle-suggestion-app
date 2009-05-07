@@ -5,10 +5,10 @@ default_run_options[:pty] = true
 # be sure to change these
 set :user, 'peterszinek'
 set :domain, 'suggestions.rubychallenge.com'
-set :application, 'rubychallenge-suggestions'
+set :application, 'puzzle-suggestion-app'
 
 # the rest should be good
-set :repository,  "git@github.com:hexagile/hf-gui-tracker.git" 
+set :repository,  "git@github.com:rubychallenge/puzzle-suggestion-app.git" 
 set :deploy_to, "/home/#{user}/#{domain}" 
 set :deploy_via, :remote_cache
 set :scm, 'git'
@@ -23,5 +23,6 @@ namespace :deploy do
   task :restart do
     run "touch #{current_path}/tmp/restart.txt" 
 		run "cp #{current_path}/config/production_config.yaml #{current_path}/config/config.yaml"
+		run "cp #{shared_path}/database.yaml #{current_path}/config/database.yaml"		
   end
 end
