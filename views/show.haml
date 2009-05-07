@@ -1,0 +1,28 @@
+#content
+  #list-title 
+    Suggestion
+    .record
+      .record-overview
+        .detail_header
+          %table#detail_table
+            %tr
+              %td{:colspan => "2"}
+                %h3.suggeston-title
+                  = @suggestion.title
+            %tr
+              %td.bold Author:  
+              %td.comment_bold_data  
+                =@suggestion.author
+            %tr
+              %td.bold Description:  
+              %td.comment_bold_data  
+                aas
+                = @suggestion.description
+                z
+            %tr
+              %td.bold Tags:  
+              %td.comment_bold_data  
+                = @suggestion.tags
+  #list-bottom
+        
+            

@@ -1,0 +1,31 @@
+#content  
+  #list-title
+    Suggest a new Puzzle!
+
+    %form#suggestion_form{:method => "post", :action => "/suggestions"}
+      %table
+        %tr   
+          %td
+            %label Author:
+          %td
+            %input{:type => 'text', :name => 'author'}
+        %tr   
+          %td
+            %label Title:
+          %td
+            %input{:type => 'text', :name => 'title'}
+        %tr
+          %td.form_label_for_textfield
+            %label Message:
+          %td
+            %textarea.new_comment_text_area{:name => 'description'}
+        %tr   
+          %td.form_label_for_textfield
+            %label Tags:
+          %td
+            %textarea.tags_text_area{:name => 'tags'}
+      %input#submit_button{ :type => "submit", :name => "submit", :value => "Create!" }
+      %div#thanks_for_suggestion{:style => "display:none;"}
+        Thanks for the suggestion!
+      #suggestion-list
+        = partial :suggestion, :collection => @suggestions
